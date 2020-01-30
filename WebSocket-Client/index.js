@@ -3,6 +3,8 @@ function MyMap(x, in_min,in_max,out_min, out_max) {
      return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }        
 
+
+var statusRobot=new Array('FORWARD is DED_END', 'FOLLOWING the Wall')
 var Cyberbot = {
           Socket: null,
           Output: [],
@@ -85,6 +87,9 @@ this.connected = false;
 
 dataFromBot ={
 	ultrasound:0,
+	status:'',
+	motorLeft:0,
+	motorRight:0,
 	ir : [0,0],
 	line: [0,0,0,0,0,0,0]	
 }
@@ -117,12 +122,17 @@ function draw(){
   fill(3);
   
   textAlign(RIGHT);
-  text(dir[0] ,200,100)
-  text(dir[1],200,200)
+  text(dataFromBot.ultrasound ,200,100)
+//  text(dir[1],200,200)
+  text(dataFromBot.ir[0] ,200,200)
+  text(dataFromBot.ir[1] ,200,300)
+  text('Left speed ' + dataFromBot.motorLeft.toString() ,200,350)
+  text('Right speed ' + dataFromBot.motorRight.toString() ,200,400)
+ 
   // A rectangle
   // An ellipse
   ellipse(mouseX, mouseY, 80, 80);
-
+	
 try{
 
   if(mouseIsPressed)
@@ -181,17 +191,20 @@ pop()
 
 
  function onData(data){
+	console.log(data,dataFromBot,statusRobot[parseInt(data[3])])
 	
 	if(data[0] !== "")
 	{
 		dataFromBot.ultrasound = data[0]
 		dataFromBot.ir = data.slice(1,3)
-		dataFromBot.line = data.slice(3)
+		dataFromBot.status = data[3]
 		
+		dataFromBot.motorLeft = data[4]
+		dataFromBot.motorRight = data[5]
 	}
 
-	dataFromBot.ir[0] = map(dataFromBot.ir[0],700,1000,0, 200)
-	dataFromBot.ir[1] = map(dataFromBot.ir[1],700,1000,0, 200)
+	//dataFromBot.ir[0] = map(dataFromBot.ir[0],700,1000,0, 200)
+	//dataFromBot.ir[1] = map(dataFromBot.ir[1],700,1000,0, 200)
 }
 function drawGrid() {
 	stroke(200);
