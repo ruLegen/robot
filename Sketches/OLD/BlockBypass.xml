@@ -1,0 +1,397 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="logic_operation" id=",=,!yHaw8B/oy.Zk;k3Q" x="580" y="55">
+    <field name="OP">AND</field>
+  </block>
+  <block type="cbot_sensor_get_us" id="~)Y^7Y@[W@+pN8RXv#J0" x="862" y="79"></block>
+  <block type="cbot_motor_speed" id="mhdHO@`c;{qC@cBk=sj}" x="758" y="125">
+    <field name="M">1</field>
+    <value name="S">
+      <block type="math_number" id="YPXW}h?MooT(QKl+JiQE">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <next>
+      <block type="cbot_motor_speed" id="DD/NGt9/HpvqiD%P%B?I">
+        <field name="M">2</field>
+        <value name="S">
+          <block type="math_number" id="s:ovVeynw|ivyK){-j2J">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+  <block type="variables_set" id="sg1j1pE6dcuJ*@7M!W()" x="325" y="219">
+    <field name="VAR">stop</field>
+    <value name="VALUE">
+      <block type="math_number" id="xu(i;:N.8yt8{]n/!,Hu">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_whileUntil" id="gMDQ`{fW%Lw4hSuV}8p%">
+        <field name="MODE">WHILE</field>
+        <value name="BOOL">
+          <block type="logic_boolean" id="w}1tmn)!dn:Iwh}K)d_5">
+            <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="variables_set" id="gbdd)1})NR|h%fwZK|i*">
+            <field name="VAR">item</field>
+            <value name="VALUE">
+              <block type="cbot_sensor_get_us" id="?k](MNgmy/K]VPvH8Q`Q"></block>
+            </value>
+            <next>
+              <block type="cbot_oled_screen" id="FRP(q5C86Z6Gh[1/9;lf">
+                <field name="S">0</field>
+                <next>
+                  <block type="cbot_oled_text" id="_m*[Nqiv]dFA4DO-dn?E">
+                    <field name="F">1</field>
+                    <field name="A">1</field>
+                    <value name="S">
+                      <block type="variables_get" id="J*U-31+UX;yeG#Y23bK[">
+                        <field name="VAR">item</field>
+                      </block>
+                    </value>
+                    <value name="R">
+                      <block type="math_number" id="q|9L[gT`SdV^Zc,5=JKk">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="~{FED;p(GwV/y`!d@L!n">
+                        <mutation else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_compare" id="jX,,9bwQ!04@[nil,Di3">
+                            <field name="OP">LTE</field>
+                            <value name="A">
+                              <block type="variables_get" id="W]`Nb_}Ov:TaITDO^j1j">
+                                <field name="VAR">item</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id=",*^MVA{YSP#6){aw1i8P">
+                                <field name="NUM">25</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="variables_set" id="E:dYhg(nA+x?6}#,-Hy|">
+                            <field name="VAR">stop</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="`sA0j8;r1hh-hG~E.5RZ">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="variables_set" id="8]Ki~5FIYs^(Wdpx~iMR">
+                            <field name="VAR">stop</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="!POTU(wR.sJ:ln^a^F,D">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="d`d9YykZ=-Ap*~cY6GMq">
+                            <mutation elseif="1"></mutation>
+                            <value name="IF0">
+                              <block type="logic_compare" id="Wt4fyk|EkeHmYmTypvU;">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="|#66FsNd:Id)tGk~4i7;">
+                                    <field name="VAR">stop</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="k5o./}~:Yzy6?Tn*^l.-">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="procedures_callnoreturn" id="G)l|3^QWfoU!T*q=%Bhp">
+                                <mutation name="rotate90"></mutation>
+                                <next>
+                                  <block type="cbot_motor_speed" id="5TcMfluv8iRCT@{XaAd_">
+                                    <field name="M">1</field>
+                                    <value name="S">
+                                      <block type="math_number" id="RXIWfsF`viTl8`/f=rV`">
+                                        <field name="NUM">200</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="cbot_motor_speed" id="C0@sYQYs+`L7pFZg%%{*">
+                                        <field name="M">2</field>
+                                        <value name="S">
+                                          <block type="math_number" id="hl,__Rv%hLpor~Ivi!.G">
+                                            <field name="NUM">200</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="time_wait" id="q6cr6KzIL@HR7w#4,L{H">
+                                            <value name="T">
+                                              <block type="math_number" id="mlS3ADiHvdv9Q+6Ca9tv">
+                                                <field name="NUM">1000</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="procedures_callnoreturn" id="%QrwnTChF:]Q@s6_^c55">
+                                                <mutation name="rotate-90"></mutation>
+                                                <next>
+                                                  <block type="cbot_motor_speed" id="Z{B:3ul|We3]r?o2{uT?">
+                                                    <field name="M">1</field>
+                                                    <value name="S">
+                                                      <block type="math_number" id="P^Ol#}fo?KYoUt8-K07(">
+                                                        <field name="NUM">200</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="cbot_motor_speed" id="/c|1M%Od:JRZ};_LJGRb">
+                                                        <field name="M">2</field>
+                                                        <value name="S">
+                                                          <block type="math_number" id="6}_^^Qboric0PztHm`[Y">
+                                                            <field name="NUM">200</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="time_wait" id="wg)(2esdEP80IMsc7*%^">
+                                                            <value name="T">
+                                                              <block type="math_number" id="VQ5cT`mTDXC?bM`[fYez">
+                                                                <field name="NUM">500</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="procedures_callnoreturn" id="7E7Vh!E(XM{#?YWV3!pU">
+                                                                <mutation name="rotate-90"></mutation>
+                                                                <next>
+                                                                  <block type="cbot_motor_speed" id="Za!ja+ZU18@bge!C{Xf7">
+                                                                    <field name="M">1</field>
+                                                                    <value name="S">
+                                                                      <block type="math_number" id="D)J2G/gFvq^2IDEh14]r">
+                                                                        <field name="NUM">200</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="cbot_motor_speed" id="eJY!1XU5U~CLuBztCJbe">
+                                                                        <field name="M">2</field>
+                                                                        <value name="S">
+                                                                          <block type="math_number" id="eq`BVgx;BMJPbB/O4[8y">
+                                                                            <field name="NUM">200</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="time_wait" id="GFM4,ycCd]w=XIkahH_g">
+                                                                            <value name="T">
+                                                                              <block type="math_number" id="mz4-M{vYW+EAgZ3A0pck">
+                                                                                <field name="NUM">1000</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="procedures_callnoreturn" id="}{A+{yxMZcS{.gziqC.#">
+                                                                                <mutation name="rotate90"></mutation>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <value name="IF1">
+                              <block type="logic_compare" id="GcR4brl4zR]D=gTh)X*;">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="!hs=DV2uF9{cm3o=M8pm">
+                                    <field name="VAR">stop</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="cgV4XTg]9TQXP1@p(dj!">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO1">
+                              <block type="cbot_motor_speed" id="gXm6VzI(ng1L5^#,I+c:">
+                                <field name="M">1</field>
+                                <value name="S">
+                                  <block type="math_number" id="3tBsS-ufVPJY@iXkzv-C">
+                                    <field name="NUM">200</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="cbot_motor_speed" id="tikwO?WKVA-spk/7z!NZ">
+                                    <field name="M">2</field>
+                                    <value name="S">
+                                      <block type="math_number" id="jv]{s@C*(2i;#E]r%t`1">
+                                        <field name="NUM">200</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn" id="H+|kYL931~ZGJUx0Z^+K" x="841" y="406">
+    <field name="NAME">rotate90</field>
+    <comment pinned="false" h="80" w="160">Опишите эту функцию…</comment>
+    <statement name="STACK">
+      <block type="cbot_motor_speed" id="*[A+U~pW=M:7gc-IK]jV">
+        <field name="M">2</field>
+        <value name="S">
+          <block type="math_number" id=")gDmavG7@UW/@=tRUddp">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="cbot_motor_speed" id="e+#i#21Du_%Nr-vgc2D^">
+            <field name="M">1</field>
+            <value name="S">
+              <block type="math_number" id="VKZ#spHBkCMUqvdo{)Z;">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="time_wait" id="XD2[(wvXqThzXguW7Nec">
+                <value name="T">
+                  <block type="math_number" id="IS!Wf5u1e{LI0TJW4NQB">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="cbot_motor_speed" id="UJ?hV~cK*wiFX-w)]V%o">
+                    <field name="M">1</field>
+                    <value name="S">
+                      <block type="math_number" id="eiUE:.n;6hjRo(D(~L2L">
+                        <field name="NUM">-500</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="cbot_motor_speed" id="~;T/Uw--d1|e1%8LZoVj">
+                        <field name="M">2</field>
+                        <value name="S">
+                          <block type="math_number" id="T,*g9=;^YIrw[NW@~lZ1">
+                            <field name="NUM">500</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="time_wait" id="!_YGw8e[|fNR)gFiU2-?">
+                            <value name="T">
+                              <block type="math_number" id="9=Rvu+;~q}d|p@A:MAB)">
+                                <field name="NUM">1000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="{gTv?{ilN%))*2gDn}~X" x="859" y="693">
+    <field name="NAME">rotate-90</field>
+    <comment pinned="false" h="80" w="160">Опишите эту функцию…</comment>
+    <statement name="STACK">
+      <block type="cbot_motor_speed" id="Ya=wW%Si?iNq0327h]gx">
+        <field name="M">2</field>
+        <value name="S">
+          <block type="math_number" id="sc6N~t|?Fk_D7Vgt)Vjp">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="cbot_motor_speed" id="kTyb(j_1l3!k3+bbH@Cv">
+            <field name="M">1</field>
+            <value name="S">
+              <block type="math_number" id="[6b0lf{:MsBAljf82#_a">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="time_wait" id="MuIh[LhAsi9Ajxo?j6:3">
+                <value name="T">
+                  <block type="math_number" id="gu;KZE{~Qvjw+mjkyf-+">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="cbot_motor_speed" id="h..7jBeWb^Jl+Tz#DV|Q">
+                    <field name="M">1</field>
+                    <value name="S">
+                      <block type="math_number" id="KyaW8/_yGeo!D]~)C+;n">
+                        <field name="NUM">500</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="cbot_motor_speed" id="l!a|6w:NE,RD{.8v7x:_">
+                        <field name="M">2</field>
+                        <value name="S">
+                          <block type="math_number" id="aNBwZ:T[4Geg0f@a5R8:">
+                            <field name="NUM">-500</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="time_wait" id="e37lc8y2|uGKE-w[V:]j">
+                            <value name="T">
+                              <block type="math_number" id="mm_/Kl9|3}bUNUT0@~:)">
+                                <field name="NUM">1000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

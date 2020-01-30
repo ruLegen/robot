@@ -1,0 +1,947 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="T~J0B)_+*|:e0pmr=6n2" x="75" y="41">
+    <field name="VAR">maxIR</field>
+    <value name="VALUE">
+      <block type="math_number" id="N=Hp|R_e2r)v?NvE9:M`">
+        <field name="NUM">900</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="%5V_A5OgY3-VDxG}_37S">
+        <field name="VAR">minIR</field>
+        <value name="VALUE">
+          <block type="math_number" id="yC_z]4DSZy^irg2O,sH3">
+            <field name="NUM">840</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="v?A:7NMHr8b)d*DJ=];/">
+            <field name="VAR">USDistance</field>
+            <value name="VALUE">
+              <block type="math_number" id="DLv2OI?c2-y#/4Tz(t*i">
+                <field name="NUM">15</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="A]w]hdcasL=d(5S~dd`M">
+                <field name="VAR">fwdSpeed</field>
+                <value name="VALUE">
+                  <block type="math_number" id="1hBSQfdKW1W6!^BDd!1y">
+                    <field name="NUM">200</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="10=][Egh]k@?DeTl)mc^">
+                    <field name="VAR">turnSpeed</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="L{wM/)l3|@GTl|0h@4)j">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="pEs(gs}8hMK475XsF:3N">
+                        <field name="VAR">waitTime</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="NLv]S;{CL;YA6C6%GR67">
+                            <field name="NUM">45</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="9I}:*7_]qVfv)s/W{5aL">
+                            <field name="VAR">IRL</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="7V-[WT0gy}Y6kxwDT6/*">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="I1^k4.ABw0]SL=h!*1[Q">
+                                <field name="VAR">IRR</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="=yJrYJNI!t%~9RdGRj|k">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="variables_set" id="P9}bDRjrgIO#vDRr``2B">
+                                    <field name="VAR">ultraSonic</field>
+                                    <value name="VALUE">
+                                      <block type="math_number" id="o7Fy,SkSjS},2+7zmVvU">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="variables_set" id="w-mymzEE(54s.)j5/Md9">
+                                        <field name="VAR">Status</field>
+                                        <value name="VALUE">
+                                          <block type="math_number" id="7v*@t}|t.zyXv*eKy+~7">
+                                            <field name="NUM">-1</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set" id="msg1#|9YbQl-e9)3/k6Y">
+                                            <field name="VAR">counter</field>
+                                            <value name="VALUE">
+                                              <block type="math_number" id="gR0bfmriN9I_egY=f##T">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="variables_set" id="DuP^b9Ni~%4duMqFuc*J">
+                                                <field name="VAR">manualControl</field>
+                                                <value name="VALUE">
+                                                  <block type="math_number" id="uIFSP_Cy@B#E2z5Jr#XQ">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="controls_whileUntil" id="xRk8@,C_hJ3`h@g_ZV=P">
+                                                    <field name="MODE">WHILE</field>
+                                                    <value name="BOOL">
+                                                      <block type="logic_boolean" id="+.Lg2VB[|wUvPDz-mzS9">
+                                                        <field name="BOOL">TRUE</field>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="DO">
+                                                      <block type="cbot_oled_screen" id="Fwl2M[[:.C79RhBK(_Q[">
+                                                        <field name="S">0</field>
+                                                        <next>
+                                                          <block type="variables_set" id="+J_ou0h{Q5W#XH{1y?G%">
+                                                            <field name="VAR">IRL</field>
+                                                            <value name="VALUE">
+                                                              <block type="cbot_sensor_get_ir" id="yYSr}wBb7;W)FJVP+CEK">
+                                                                <field name="I">1</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="variables_set" id="gkVc-fS}:}m|572;-eZk">
+                                                                <field name="VAR">IRR</field>
+                                                                <value name="VALUE">
+                                                                  <block type="cbot_sensor_get_ir" id="kaoK81;R/9;tCz7=hO,o">
+                                                                    <field name="I">2</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="variables_set" id="D#(H4#pg,zTkqwyjuwIF">
+                                                                    <field name="VAR">ultraSonic</field>
+                                                                    <value name="VALUE">
+                                                                      <block type="cbot_sensor_get_us" id="6^/*s:2=dLug!cAg6t%q"></block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="procedures_callnoreturn" id="s1l^J{W-|f#cYuoTe!l8">
+                                                                        <mutation name="ClampUS"></mutation>
+                                                                        <next>
+                                                                          <block type="controls_if" id=",t?ir]*2#,wA|5O(YP^H">
+                                                                            <mutation else="1"></mutation>
+                                                                            <value name="IF0">
+                                                                              <block type="logic_compare" id="T1O{v}7}:YhWb8HEQQ8(">
+                                                                                <field name="OP">EQ</field>
+                                                                                <value name="A">
+                                                                                  <block type="variables_get" id="DoOLP6T_7`%HpK5m3t2K">
+                                                                                    <field name="VAR">manualControl</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="math_number" id="/NfSM3mM-.N1FoB/^@B8">
+                                                                                    <field name="NUM">1</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <statement name="DO0">
+                                                                              <block type="controls_if" id="2!j7FGb+ubd)*Y{dpNs3">
+                                                                                <mutation else="1"></mutation>
+                                                                                <value name="IF0">
+                                                                                  <block type="logic_compare" id="~fK49Bcy8t1wy8Rb9v,K">
+                                                                                    <field name="OP">GT</field>
+                                                                                    <value name="A">
+                                                                                      <block type="variables_get" id="7Y6X((xDYOV=cFEN`O?n">
+                                                                                        <field name="VAR">ultraSonic</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="variables_get" id="N?V:C=:nsDSwdKW_+sJq">
+                                                                                        <field name="VAR">USDistance</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <statement name="DO0">
+                                                                                  <block type="controls_if" id="mna_B*TOcyRAZckA2nr~">
+                                                                                    <mutation elseif="2"></mutation>
+                                                                                    <value name="IF0">
+                                                                                      <block type="logic_operation" id="XF^,Z^cVorG@a1IUQsbV">
+                                                                                        <field name="OP">AND</field>
+                                                                                        <value name="A">
+                                                                                          <block type="logic_compare" id="M`sYF2W#{-AL)es.~NmY">
+                                                                                            <field name="OP">GTE</field>
+                                                                                            <value name="A">
+                                                                                              <block type="variables_get" id="Y^lL,l}Y_PT9*3PfHe!+">
+                                                                                                <field name="VAR">IRR</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <block type="variables_get" id="[Inv,%FvUtodrd{eiTml">
+                                                                                                <field name="VAR">minIR</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="logic_compare" id="T_y7;1Li(==Iqg=ZW|Zz">
+                                                                                            <field name="OP">LT</field>
+                                                                                            <value name="A">
+                                                                                              <block type="variables_get" id="a~gj}zfv~YmyjB,@/3IX">
+                                                                                                <field name="VAR">IRR</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <block type="variables_get" id="+XzBr(BN+f{dSDSLT3Cb">
+                                                                                                <field name="VAR">maxIR</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <statement name="DO0">
+                                                                                      <block type="variables_set" id="}I.D;r@l2YE1f/q@aSZ;">
+                                                                                        <field name="VAR">Status</field>
+                                                                                        <value name="VALUE">
+                                                                                          <block type="math_number" id="dZ+,RMr2ii*0wb1Z|Qff">
+                                                                                            <field name="NUM">0</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="procedures_callnoreturn" id="|5B6#|fNYWypiM~E*AVA">
+                                                                                            <mutation name="forward"></mutation>
+                                                                                            <next>
+                                                                                              <block type="variables_set" id="j*/cD(/j4f;yiHD3;#CJ">
+                                                                                                <field name="VAR">counter</field>
+                                                                                                <value name="VALUE">
+                                                                                                  <block type="math_number" id="{b*:xWs{YOKnEt6GPBzd">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                    <value name="IF1">
+                                                                                      <block type="logic_compare" id="HwhOLm*ekr#hI1wlfCNp">
+                                                                                        <field name="OP">GTE</field>
+                                                                                        <value name="A">
+                                                                                          <block type="variables_get" id="y]O,`ok3BeevC{3Qokl+">
+                                                                                            <field name="VAR">IRR</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="variables_get" id=":G^oY)uJ+Ri7j6)*v4.s">
+                                                                                            <field name="VAR">maxIR</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <statement name="DO1">
+                                                                                      <block type="procedures_callnoreturn" id=";-D+nSZ81FNo3@0S%^bH">
+                                                                                        <mutation name="right"></mutation>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                    <value name="IF2">
+                                                                                      <block type="logic_compare" id="n9OIK0zE([`x0NYcssa|">
+                                                                                        <field name="OP">LT</field>
+                                                                                        <value name="A">
+                                                                                          <block type="variables_get" id="b0K]ICtgWl.D(o#+Q[3I">
+                                                                                            <field name="VAR">IRR</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="variables_get" id="IJxP*VW;D24+rR9dc_Vh">
+                                                                                            <field name="VAR">minIR</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <statement name="DO2">
+                                                                                      <block type="variables_set" id="UA.}gU(7o~u%5KeQ(J?~">
+                                                                                        <field name="VAR">Status</field>
+                                                                                        <value name="VALUE">
+                                                                                          <block type="math_number" id="Df!(P;QFb;jrHtNL!Rk-">
+                                                                                            <field name="NUM">2</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="procedures_callnoreturn" id="2Nn4,U0A!~roCR:p{nNt">
+                                                                                            <mutation name="left"></mutation>
+                                                                                            <next>
+                                                                                              <block type="variables_set" id="Ccau%K?#kTe[Px9v6?N8">
+                                                                                                <field name="VAR">counter</field>
+                                                                                                <value name="VALUE">
+                                                                                                  <block type="math_number" id="~?+NvAw2M?aOa40aZ-ha">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <statement name="ELSE">
+                                                                                  <block type="controls_if" id="k|Iu%2fzln!s4!VVhhl{">
+                                                                                    <value name="IF0">
+                                                                                      <block type="logic_compare" id="ZP_Mc1!;}0^z9XBx=A;/">
+                                                                                        <field name="OP">LTE</field>
+                                                                                        <value name="A">
+                                                                                          <block type="variables_get" id="jQ=8KNmr2F`Dc`.%klE(">
+                                                                                            <field name="VAR">ultraSonic</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="variables_get" id="_4+XT0k:4QM?B#N(W7j`">
+                                                                                            <field name="VAR">USDistance</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <statement name="DO0">
+                                                                                      <block type="controls_if" id="d^*Q`~IxOWmbg!VQ5}NU">
+                                                                                        <mutation elseif="2"></mutation>
+                                                                                        <value name="IF0">
+                                                                                          <block type="logic_operation" id="E_A1G5sjMZFEplv2+iYO">
+                                                                                            <field name="OP">AND</field>
+                                                                                            <value name="A">
+                                                                                              <block type="logic_compare" id="1ZVb8POUg9@[-niy.EUe">
+                                                                                                <field name="OP">GTE</field>
+                                                                                                <value name="A">
+                                                                                                  <block type="variables_get" id="}W}0Wp[6;{Y%3c8P0|yS">
+                                                                                                    <field name="VAR">IRR</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="B">
+                                                                                                  <block type="variables_get" id="7w/P|A4BS.i~{v@2za0G">
+                                                                                                    <field name="VAR">minIR</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <block type="logic_compare" id="zx,Y4SHLdyi;g.zmDx59">
+                                                                                                <field name="OP">LT</field>
+                                                                                                <value name="A">
+                                                                                                  <block type="variables_get" id=":ohD:M7}3s+!N8W9k{CK">
+                                                                                                    <field name="VAR">IRR</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="B">
+                                                                                                  <block type="variables_get" id="~5m:SNsjV:kA]r`MY(]m">
+                                                                                                    <field name="VAR">maxIR</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <statement name="DO0">
+                                                                                          <block type="variables_set" id="|Kt7z6[ErXvi84c(9=oH">
+                                                                                            <field name="VAR">Status</field>
+                                                                                            <value name="VALUE">
+                                                                                              <block type="math_number" id=":2;4rFF(68+d!sl:eY]e">
+                                                                                                <field name="NUM">3</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <next>
+                                                                                              <block type="procedures_callnoreturn" id="%.S%{zD}H_B=1wh*(Wo*">
+                                                                                                <mutation name="left"></mutation>
+                                                                                                <next>
+                                                                                                  <block type="variables_set" id="`)T45s~T):R)ZR}xN|a0">
+                                                                                                    <field name="VAR">counter</field>
+                                                                                                    <value name="VALUE">
+                                                                                                      <block type="math_number" id="t/kVn41]fW=o(hXgfTM+">
+                                                                                                        <field name="NUM">0</field>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </statement>
+                                                                                        <value name="IF1">
+                                                                                          <block type="logic_compare" id="g=|+};X(J7;5stFXwt+_">
+                                                                                            <field name="OP">GTE</field>
+                                                                                            <value name="A">
+                                                                                              <block type="variables_get" id="PWC];XzL[S9@vw{,XsC;">
+                                                                                                <field name="VAR">IRR</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <block type="variables_get" id="OdVy;#M@cl~v=,t9)n99">
+                                                                                                <field name="VAR">maxIR</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <statement name="DO1">
+                                                                                          <block type="variables_set" id=".uH5Ku?_!T1Uz;4GuQU+">
+                                                                                            <field name="VAR">counter</field>
+                                                                                            <value name="VALUE">
+                                                                                              <block type="math_number" id="_?r=5*dU=IS}av^r7KD#">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <next>
+                                                                                              <block type="procedures_callnoreturn" id="o0,O#l6[hPfiO)l7t,F(">
+                                                                                                <mutation name="right"></mutation>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </statement>
+                                                                                        <value name="IF2">
+                                                                                          <block type="logic_compare" id="V?%UFnS{cqaOKGBsF:Pd">
+                                                                                            <field name="OP">LT</field>
+                                                                                            <value name="A">
+                                                                                              <block type="variables_get" id="}{L_-WqSGjn)KAV@5v]k">
+                                                                                                <field name="VAR">IRR</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <block type="variables_get" id="X{kYz`XSBvb[%PQol_E1">
+                                                                                                <field name="VAR">minIR</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <statement name="DO2">
+                                                                                          <block type="variables_set" id="lO6(n3W^^1w/aAm%~skw">
+                                                                                            <field name="VAR">Status</field>
+                                                                                            <value name="VALUE">
+                                                                                              <block type="math_number" id="R(l7{r*R=~?Z~A(HETwO">
+                                                                                                <field name="NUM">5</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <next>
+                                                                                              <block type="procedures_callnoreturn" id="]z+jB%H#n+4CE4F5+B(x">
+                                                                                                <mutation name="left"></mutation>
+                                                                                                <next>
+                                                                                                  <block type="variables_set" id="Dt{xhKv}+85:%?927RjT">
+                                                                                                    <field name="VAR">counter</field>
+                                                                                                    <value name="VALUE">
+                                                                                                      <block type="math_number" id="cWo(=)fzi0oQD`QgE+E7">
+                                                                                                        <field name="NUM">0</field>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </statement>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                  </block>
+                                                                                </statement>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <statement name="ELSE">
+                                                                              <block type="cbot_motor_speed" id="S.TSK^vG;LmsY=ORDx3k">
+                                                                                <field name="M">1</field>
+                                                                                <value name="S">
+                                                                                  <block type="cbot_wifi_get" id="bO@~Bzb-^,#u|-sJwzj0">
+                                                                                    <value name="O">
+                                                                                      <block type="math_number" id="5:X}kLA1d)]KoTR]?bN~">
+                                                                                        <field name="NUM">0</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="cbot_motor_speed" id="q:*fC44ppHn_rSOUr=Xu">
+                                                                                    <field name="M">2</field>
+                                                                                    <value name="S">
+                                                                                      <block type="cbot_wifi_get" id="xWc;(c7fjOL+3vQYlZs/">
+                                                                                        <value name="O">
+                                                                                          <block type="math_number" id="?0S.W=~g:H@abby9Yx8l">
+                                                                                            <field name="NUM">1</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="cbot_oled_text" id=".wySnA+Sq7jd}XE7{rW-">
+                                                                                        <field name="F">1</field>
+                                                                                        <field name="A">0</field>
+                                                                                        <value name="S">
+                                                                                          <block type="text_join" id="m{fZvN{(xX;_zJ/-pW_V">
+                                                                                            <mutation items="2"></mutation>
+                                                                                            <value name="ADD0">
+                                                                                              <block type="cbot_wifi_get" id="g!85-C5c0~EM]d%gbj^}">
+                                                                                                <value name="O">
+                                                                                                  <block type="math_number" id="siBu@1HsrB8V7D}/BJcn">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="R">
+                                                                                          <block type="math_number" id="/fG-GQTY})T{{;YiMjUq">
+                                                                                            <field name="NUM">19</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="cbot_oled_text" id="0DB.+*)dHgMmd(h5TwX1">
+                                                                                            <field name="F">1</field>
+                                                                                            <field name="A">0</field>
+                                                                                            <value name="S">
+                                                                                              <block type="text_join" id="BUQ^s+vF{#:+.fYe-y8D">
+                                                                                                <mutation items="2"></mutation>
+                                                                                                <value name="ADD0">
+                                                                                                  <block type="cbot_wifi_get" id="Mk;^onC6H/#+F[K#,AsY">
+                                                                                                    <value name="O">
+                                                                                                      <block type="math_number" id="on%pYB-f@ZPIK#56cQ3H">
+                                                                                                        <field name="NUM">1</field>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="R">
+                                                                                              <block type="math_number" id="~%k8lZfowVb:+8KNeycJ">
+                                                                                                <field name="NUM">39</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <next>
+                                                                              <block type="controls_if" id="*~Ht|k]}I8D+q54jed2I">
+                                                                                <value name="IF0">
+                                                                                  <block type="cbot_wifi_con" id="Xd?x4V4`}SR7!6}8L5MP"></block>
+                                                                                </value>
+                                                                                <statement name="DO0">
+                                                                                  <block type="cbot_wifi_set" id="cJesl?~z3Xq:n^ztmh%6">
+                                                                                    <value name="S">
+                                                                                      <block type="variables_get" id="L9_GKN.IF/z)(5YMfD!T">
+                                                                                        <field name="VAR">ultraSonic</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="O">
+                                                                                      <block type="math_number" id="yb+Prj=/?mf3`W|;}dzE">
+                                                                                        <field name="NUM">0</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="cbot_wifi_set" id="TekqOn7?rh[:547U3!92">
+                                                                                        <value name="S">
+                                                                                          <block type="variables_get" id="QTdTuYQX[t*hkrgv*#!|">
+                                                                                            <field name="VAR">IRL</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="O">
+                                                                                          <block type="math_number" id="2d[xD[@iKAx]{ZvqoCcH">
+                                                                                            <field name="NUM">1</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="cbot_wifi_set" id="XADSA(,J{w^EllA#=UQy">
+                                                                                            <value name="S">
+                                                                                              <block type="variables_get" id="g37f`rYGje@.k;*|eft3">
+                                                                                                <field name="VAR">IRR</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="O">
+                                                                                              <block type="math_number" id="SDE{DA;bl^[xeT@0IRuY">
+                                                                                                <field name="NUM">2</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <next>
+                                                                                              <block type="cbot_wifi_set" id="t9i0pN@M=)%cF0KO5tIf">
+                                                                                                <value name="S">
+                                                                                                  <block type="variables_get" id="XRuip@M|A[zX)?3FiKsv">
+                                                                                                    <field name="VAR">Status</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="O">
+                                                                                                  <block type="math_number" id="|w3hpE]K6{Ba5JRQj@o`">
+                                                                                                    <field name="NUM">3</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <next>
+                                                                                                  <block type="cbot_wifi_set" id="r(lD00M0}Y?Ul`AQWFtu">
+                                                                                                    <value name="S">
+                                                                                                      <block type="variables_get" id="TT3uo2NXV17;0h,GsTUO">
+                                                                                                        <field name="VAR">manualControl</field>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                    <value name="O">
+                                                                                                      <block type="math_number" id="Y=,/^:64)CWEhy#[.1h9">
+                                                                                                        <field name="NUM">4</field>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                    <next>
+                                                                                                      <block type="variables_set" id="p-r(sH~N*k`pn#*eLy]9">
+                                                                                                        <field name="VAR">manualControl</field>
+                                                                                                        <value name="VALUE">
+                                                                                                          <block type="cbot_wifi_get" id="=ma~3pv]h6H;,z+(-WP7">
+                                                                                                            <value name="O">
+                                                                                                              <block type="math_number" id="[2V#MtpDG@|f7-oN9Kn^">
+                                                                                                                <field name="NUM">4</field>
+                                                                                                              </block>
+                                                                                                            </value>
+                                                                                                          </block>
+                                                                                                        </value>
+                                                                                                        <next>
+                                                                                                          <block type="cbot_oled_text" id="_OVN%i~ITt,_w/iJiBa#">
+                                                                                                            <field name="F">1</field>
+                                                                                                            <field name="A">0</field>
+                                                                                                            <value name="S">
+                                                                                                              <block type="text_join" id="IPebPv,/r+o)SjgIi-[@">
+                                                                                                                <mutation items="2"></mutation>
+                                                                                                                <value name="ADD0">
+                                                                                                                  <block type="variables_get" id="kV4fS(WQ7/1zE1=Dr1Q;">
+                                                                                                                    <field name="VAR">ultraSonic</field>
+                                                                                                                  </block>
+                                                                                                                </value>
+                                                                                                              </block>
+                                                                                                            </value>
+                                                                                                            <value name="R">
+                                                                                                              <block type="math_number" id="@Ch-CV0fqLgo.k#BTGlS">
+                                                                                                                <field name="NUM">0</field>
+                                                                                                              </block>
+                                                                                                            </value>
+                                                                                                            <next>
+                                                                                                              <block type="cbot_oled_screen" id=")CdW1.NZz+eDuwh-?T^I">
+                                                                                                                <field name="S">1</field>
+                                                                                                              </block>
+                                                                                                            </next>
+                                                                                                          </block>
+                                                                                                        </next>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </statement>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn" id="p1rI_Qp7LYk;@uUB?s,h" x="1216" y="291">
+    <field name="NAME">forward</field>
+    <comment pinned="false" h="80" w="160">Опишите эту функцию…</comment>
+    <statement name="STACK">
+      <block type="cbot_motor_speed" id="IQn7YN{(7Slmo]3Ct#Mz">
+        <field name="M">1</field>
+        <value name="S">
+          <block type="variables_get" id="Y+f6naO/Roh@,T1JJ3sE">
+            <field name="VAR">fwdSpeed</field>
+          </block>
+        </value>
+        <next>
+          <block type="cbot_motor_speed" id=":4N:;,l?e*-m-P(]x?Yq">
+            <field name="M">2</field>
+            <value name="S">
+              <block type="variables_get" id="Sof.lFVw{ygu_7|k9S@^">
+                <field name="VAR">fwdSpeed</field>
+              </block>
+            </value>
+            <next>
+              <block type="time_wait" id="c@iN5p-%,-C57X?]ndOI">
+                <value name="T">
+                  <block type="variables_get" id="iIzZQ(aavrQ)wk3FFcKW">
+                    <field name="VAR">waitTime</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="ZXb=~#8o*.yvgUn1,-c~" x="733" y="328">
+    <field name="NAME">ClampUS</field>
+    <comment pinned="false" h="80" w="160">Опишите эту функцию…</comment>
+    <statement name="STACK">
+      <block type="controls_if" id="*|)~KeN*VEvH*^NF|1td">
+        <value name="IF0">
+          <block type="logic_compare" id="82wsftKs%Q7w[]6la4nN">
+            <field name="OP">GTE</field>
+            <value name="A">
+              <block type="variables_get" id="W_^bxfB0zVsuGI61:zDl">
+                <field name="VAR">ultraSonic</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="=cR7OuBVNp4i@zwW,TTE">
+                <field name="NUM">40</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="p@O^R,cfyu-D)88`=dO~">
+            <field name="VAR">ultraSonic</field>
+            <value name="VALUE">
+              <block type="math_number" id="%hWT74.E2n=a?;_VOHMg">
+                <field name="NUM">40</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="Jb0kG9YQBW4I;z7%~8+K" x="1034" y="527">
+    <field name="NAME">left</field>
+    <comment pinned="false" h="80" w="160">Опишите эту функцию…</comment>
+    <statement name="STACK">
+      <block type="cbot_motor_speed" id="_~8]xA?9AG-sA_(|CD]|">
+        <field name="M">1</field>
+        <value name="S">
+          <block type="math_arithmetic" id="~+,U}dhEHiP,h[Ex2,|l">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <block type="variables_get" id="PZ]Fc:,/HIAiF4iU(v*l">
+                <field name="VAR">turnSpeed</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="_y(?`ha_1Cd}YJ6(Id+j">
+                <field name="NUM">-1</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="cbot_motor_speed" id="@V9(b[MPNnHcrl!xC.hC">
+            <field name="M">2</field>
+            <value name="S">
+              <block type="variables_get" id="2:YIWi7HbXj_6r1KGj`U">
+                <field name="VAR">turnSpeed</field>
+              </block>
+            </value>
+            <next>
+              <block type="time_wait" id="0x0;adm77*eeAMZ|Ks@t">
+                <value name="T">
+                  <block type="variables_get" id="p7=LLftz/;i-P6N{?Qzw">
+                    <field name="VAR">waitTime</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="variables_set" id="eaEABqv,~Fb[3:*yS.v9" x="724" y="727">
+    <field name="VAR">Status</field>
+    <value name="VALUE">
+      <block type="math_number" id="S5=jzHw+JZ.qn.fd|2K]">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+  </block>
+  <block type="procedures_defnoreturn" id="7;kk+wFvVOY~H?,HLs;i" x="1222" y="751">
+    <field name="NAME">right</field>
+    <comment pinned="false" h="80" w="160">Опишите эту функцию…</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="tEi,T(7PRZ#sv[2sO(Z{">
+        <field name="VAR">Status</field>
+        <value name="VALUE">
+          <block type="math_number" id="8JoKQ7RYr|is7;P[J*hm">
+            <field name="NUM">4</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="Ye8gu+Wh8K{KUiOu?xgW">
+            <field name="VAR">counter</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="?]`o3pI%CO!+(32;S^(w">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <block type="variables_get" id="sLvteJ_FBWw4_`A;OJW1">
+                    <field name="VAR">counter</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="+Sbz+U)#4.#n4_2%N,pu">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="cbot_motor_speed" id="OGJnK7=`#xr|qi=ATiMO">
+                <field name="M">1</field>
+                <value name="S">
+                  <block type="variables_get" id="p}Arlh(6j41UX8BMNnOi">
+                    <field name="VAR">turnSpeed</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="cbot_motor_speed" id="}M#GGx,ltPaMcHGLuMwI">
+                    <field name="M">2</field>
+                    <value name="S">
+                      <block type="math_arithmetic" id="Gvab~A](x^VFA.Nu7#T@">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="variables_get" id="sTr2cM}7|lw|7Rs3-*?1">
+                            <field name="VAR">turnSpeed</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_arithmetic" id="*gCNo94[6jXxP}oJmk5)">
+                            <field name="OP">MULTIPLY</field>
+                            <value name="A">
+                              <block type="variables_get" id=".Odi)@mOw[[t7lRu[.hq">
+                                <field name="VAR">counter</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="#Rny}ZX8--J?zj+k/B?c">
+                                <field name="NUM">-0.03</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="time_wait" id="hcAT#.x[3udt^)?~EpTl">
+                        <value name="T">
+                          <block type="variables_get" id="lqoV^enmb~hGPit]KzsS">
+                            <field name="VAR">waitTime</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="variables_set" id="!@Bt-8X_%RuGl_%+4zW}" x="1352" y="1094">
+    <field name="VAR">Status</field>
+    <value name="VALUE">
+      <block type="math_number" id="VJtU|Ad^cn_C.9?+`b2k">
+        <field name="NUM">6</field>
+      </block>
+    </value>
+  </block>
+  <block type="variables_get" id="0R;v?1=Jq44#K3?WU*bc" x="889" y="1135">
+    <field name="VAR">ultraSonic</field>
+  </block>
+  <block type="cbot_wifi_set" id="-G{Q)QxI7]?_hyd!yWjk" x="1217" y="1391">
+    <value name="S">
+      <block type="cbot_line_get" id="?U1n%SDs}H?4Xn-x)A~5">
+        <field name="L">3</field>
+      </block>
+    </value>
+    <value name="O">
+      <block type="math_number" id="CW.+8q!!|Cj,g5rq]46p">
+        <field name="NUM">5</field>
+      </block>
+    </value>
+    <next>
+      <block type="cbot_wifi_set" id="S|BwHFP,1%xfaK(Cx/jF">
+        <value name="S">
+          <block type="cbot_line_get" id="F_0=Z^P80veAcqSTN0%n">
+            <field name="L">4</field>
+          </block>
+        </value>
+        <value name="O">
+          <block type="math_number" id="]mdd0;;Uk[_7.H.dz:o3">
+            <field name="NUM">6</field>
+          </block>
+        </value>
+        <next>
+          <block type="cbot_wifi_set" id="|2Ht^NR7TA`#wlI^{_Yz">
+            <value name="S">
+              <block type="cbot_line_get" id=".##~.li6Kc!|uHzCxKAj">
+                <field name="L">5</field>
+              </block>
+            </value>
+            <value name="O">
+              <block type="math_number" id="GL[2}zqvNwljcUD_bLmH">
+                <field name="NUM">7</field>
+              </block>
+            </value>
+            <next>
+              <block type="cbot_wifi_set" id="L?20[)+}?4ffH]h00o#i">
+                <value name="S">
+                  <block type="cbot_line_get" id="T-}M.DQ`,3.5Ua{|6O]G">
+                    <field name="L">6</field>
+                  </block>
+                </value>
+                <value name="O">
+                  <block type="math_number" id="kDech5-gh[*SSaB,x1lA">
+                    <field name="NUM">8</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
